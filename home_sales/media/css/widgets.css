@@ -1,0 +1,394 @@
+/**
+ * @copyright Transparensee Systems, Inc.
+ * @fileOverview core.css
+ *
+ * Core styles for widgets.
+ */
+
+ol.t11e-list-entries {
+    margin:0 auto;
+}
+li.t11e-list-entry {
+    list-style-type: none;
+}
+
+.t11e-widget {
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.t11e-widget .t11e-hd {
+    margin: 0;
+    padding: 0;
+}
+
+.t11e-widget .t11e-hd h1 {
+    font-size: 1em;
+}
+
+.t11e-widget .t11e-bd {
+    margin: 0;
+    padding: 0;
+}
+
+.t11e-widget .t11e-ft {
+    margin: 0;
+    padding: 0;
+}
+/**
+ * @copyright Transparensee Systems, Inc.
+ * @fileOverview pagination_widget.css
+ * Core styles for t11e.widget.jquery.PaginationWidget.
+ */
+
+.t11e-widget-jquery-pagination .pagination a {
+    /* page links */
+}
+
+.t11e-widget-jquery-pagination .pagination a, .pagination span {
+    display: block;
+    float: left;
+}
+
+.t11e-widget-jquery-pagination .pagination span.current {
+    /* currently selected page */
+}
+
+.t11e-widget-jquery-pagination .pagination .current.prev, .pagination .current.next{
+    /* current next or previous button */
+}
+/**
+ * @copyright Transparensee Systems, Inc.
+ * @fileOverview faceted_checkboxes_widget.css
+ * Core styles for t11e.widget.jquery.FacetedCheckboxesWidget.
+ */
+
+/*
+ * Checkbox rows
+ */
+.t11e-widget-jquery-faceted-checkboxes-bd div.row {
+    float:left;
+    position: relative;
+    width: 100%;
+}
+
+/*
+ * Position checkboxes
+ */
+.t11e-widget-jquery-faceted-checkboxes-bd div.row input {
+    float: left;
+    margin: .125em 0 0 0;
+}
+
+/*
+ * Position checkbox labels
+ */
+.t11e-widget-jquery-faceted-checkboxes-bd div.row label {
+    float: left;
+    margin: 0 0 0 .5em;
+    width: 65%;
+}
+
+/*
+ * Position drilldown counts
+ */
+.t11e-widget-jquery-faceted-checkboxes-bd div.row span.facet-count,
+.t11e-widget-jquery-faceted-checkboxes-bd div.row span.fuzzy-facet-count {
+    position: absolute;
+    top: 0;
+    right: .1em;
+}
+
+/*
+ * Remove bullets/numbers from ordered lists
+ */
+.t11e-widget-jquery-faceted-checkboxes-bd ol {
+    margin:0 0 0 0;
+}
+
+.t11e-widget-jquery-faceted-checkboxes-bd ol ol {
+    margin:0 0 0 1em;
+}
+
+.t11e-widget-jquery-faceted-checkboxes-bd li {
+    list-style-type: none;
+}
+/**
+ * @copyright Transparensee Systems, Inc.
+ * @fileOverview faceted_flyout_widget.css
+ * Core styles for t11e.widget.jquery.FacetedFlyoutWidget.
+ */
+
+/*
+ * Breadcrumb button.
+ */
+.t11e-widget-jquery-faceted-flyout .breadcrumb span a.close {
+    position: static;
+    cursor: pointer;
+}
+
+fieldset.t11e-widget-jquery-faceted-flyout-primary,
+fieldset.t11e-widget-jquery-faceted-flyout-secondary {
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none;
+}
+
+fieldset.t11e-widget-jquery-faceted-flyout-secondary {
+    display: none;
+    z-index: 1000;
+}
+
+/*
+ * Checkbox rows
+ */
+fieldset.t11e-widget-jquery-faceted-flyout-primary div.row,
+fieldset.t11e-widget-jquery-faceted-flyout-secondary div.row {
+    float:left;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+
+/*
+ * Position checkboxes
+ */
+fieldset.t11e-widget-jquery-faceted-flyout-primary div.row input,
+fieldset.t11e-widget-jquery-faceted-flyout-secondary div.row input {
+    float: left;
+    margin-top: .125em;
+    margin-bottom: 0;
+}
+
+fieldset.t11e-widget-jquery-faceted-flyout-secondary .flyout-panel div.row input {
+    margin-top: .3em;
+}
+
+/*
+ * Position checkbox labels
+ */
+fieldset.t11e-widget-jquery-faceted-flyout-primary div.row label,
+fieldset.t11e-widget-jquery-faceted-flyout-secondary div.row label {
+   width: 65%;
+   float: left;
+}
+
+/*
+ * Position drilldown counts
+ */
+fieldset.t11e-widget-jquery-faceted-flyout-primary div.row span.facet-count,
+fieldset.t11e-widget-jquery-faceted-flyout-primary div.row span.fuzzy-facet-count,
+fieldset.t11e-widget-jquery-faceted-flyout-secondary div.row span.facet-count,
+fieldset.t11e-widget-jquery-faceted-flyout-secondary div.row span.fuzzy-facet-count {
+	    position: absolute;
+    top: .125em;
+    right: .1em;
+}
+
+fieldset.t11e-widget-jquery-faceted-flyout-secondary .flyout-panel {
+    float:left;
+    width: 400px;
+    border: 1px solid #AAAAAA;
+    background-color: #FFFFFF;
+    padding: .25em 1.5em .25em .25em;
+    z-index: 1000;
+}
+
+fieldset.t11e-widget-jquery-faceted-flyout-secondary .flyout-panel table {
+    border: 0;
+    margin: 0 auto;
+    width: 100%;
+}
+
+fieldset.t11e-widget-jquery-faceted-flyout-secondary .flyout-panel tr,
+fieldset.t11e-widget-jquery-faceted-flyout-secondary .flyout-panel td,
+fieldset.t11e-widget-jquery-faceted-flyout-secondary .flyout-panel th {
+    vertical-align: top;
+    border: 0;
+    padding:0;
+    margin: 0;
+}
+
+/*
+ * Position flyout panel's close button
+ */
+fieldset.t11e-widget-jquery-faceted-flyout-secondary .close-flyout-panel {
+    position: absolute;
+    top: .12em;
+    right: .12em;
+    cursor: pointer;
+}
+
+/**
+ * Toggle button
+ */
+.t11e-widget-jquery-faceted-flyout-bd div.toggle-flyout {
+    padding: 0;
+    cursor: pointer;
+}
+
+.t11e-widget-jquery-faceted-flyout-bd div.t11e-state-disabled {
+    color: #DDDDDD;
+}
+/**
+ * @copyright Transparensee Systems, Inc.
+ * @fileOverview google_map_widget.css
+ * Core styles for t11e.widget.jquery.GoogleMapWidget.
+ */
+.t11e-widget-jquery-google-map-hd {
+    padding: 0 !important;
+    margin:0 !important;
+}
+
+.t11e-widget-jquery-google-map-bd {
+    padding: 0 !important;
+}
+
+.t11e-widget-jquery-google-map-bd .google-map {
+    border: 1px solid #000000;
+    height: 200px;
+    z-index: 500;
+}
+
+.t11e-widget-jquery-google-map-ft {
+    padding: 0 !important;
+    margin:0 !important;
+}
+/**
+ * @copyright Transparensee Systems, Inc.
+ * @fileOverview response_widget.css
+ * Core styles for t11e.widget.jquery.ResponseWidget.
+ */
+.t11e-widget-jquery-response-hd h1 {
+    display: none;
+}
+/**
+ * @copyright Transparensee Systems, Inc.
+ * @fileOverview results_widget.css
+ * Core styles for t11e.widget.jquery.ResultsWidget.
+ */
+
+/**
+ * Override this class to customize the display of the loading image.
+ */
+
+.t11e-widget-jquery-results-loading {
+    display: none;
+}
+
+.t11e-widget-jquery-results-loading img {
+    margin: 0 auto;
+}
+/**
+* @copyright Transparensee Systems, Inc.
+* @fileOverview accordion_widget.css
+* Core styles for t11e.widget.jquery.AccordionWidget.
+*/
+
+.t11e-widget-jquery-accordion {
+   position: static;
+}
+
+.t11e-widget-jquery-accordion-bd {
+   /*position: absolute;*/
+   padding: 0 !important;
+   z-index: 500;
+   width: 100%;
+}
+
+.t11e-widget-jquery-accordion-bd .t11e-accordion-top,
+.t11e-widget-jquery-accordion-bd .t11e-accordion-bottom {
+   -moz-background-clip: border;
+   -moz-background-inline-policy: continuous;
+   -moz-background-origin: padding;
+   border: 1px solid #CCC;
+   background-color: #EEE;
+   height: 29px;
+}
+
+.t11e-widget-jquery-accordion-bd .t11e-accordion-body {
+    background-color: #FFF;
+    display: none;
+}
+
+
+.t11e-widget-jquery-breadcrumb .t11e-widget-jquery-breadcrumb-bd {
+    padding: .25em;
+}
+.t11e-widget-jquery-breadcrumb-bd div.t11e-breadcrumb {
+    float: left;
+    margin: .25em .125em .25em .125em;
+    padding: .25em;
+}
+
+.t11e-checkbox, .t11e-radio {
+    position: relative;
+}
+
+/* input, label positioning */
+.t11e-checkbox input, .t11e-radio input {
+    position: absolute;
+    left: 2px;
+    top: 3px;
+    margin: 0;
+    z-index: 0;
+}
+
+/*
+ * z-index is set higher than checkboxes/radio buttons
+ * so that the labels hide them.
+ */
+.t11e-checkbox label,
+.t11e-radio label {
+    display: block;
+    position: relative;
+    z-index: 1;
+    padding: .25em 0 .25em 30px;
+    margin: 0 0 .3em;
+    cursor: pointer;
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+}
+
+label.ui-state-hover {
+
+}
+
+.t11e-checkbox label.ui-state-focus,
+.t11e-radio label.ui-state-focus {
+}
+
+/**
+ *  Image sprite placement that hides radio buttons and checkboxes
+ */
+
+.t11e-checkbox label {
+    /*background: #ffffff url(images/checkbox.gif) no-repeat;*/
+}
+
+.t11e-radio label {
+    /*background:#ffffff url(images/radiobutton.gif) no-repeat;*/
+}
+
+.t11e-checkbox label, .t11e-radio label {
+    /*background-position: -10px -14px;*/
+}
+
+.t11e-checkbox label.ui-state-hover,
+.t11e-checkbox label.ui-state-focus,
+.t11e-radio label.ui-state-hover,
+.t11e-radio label.ui-state-focus {
+    /*background-position: -10px -114px;*/
+}
+
+.t11e-checkbox label.ui-state-checked,
+.t11e-radio label.ui-state-checked {
+    background-color: #eeeeee;
+   /*background-position: -10px -214px;*/
+}
+
+.t11e-checkbox label.ui-state-checked-hover,
+.t11e-checkbox label.ui-state-checked-focus {
+    /*background-position: -10px -314px;*/
+}

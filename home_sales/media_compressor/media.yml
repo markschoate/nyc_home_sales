@@ -1,0 +1,63 @@
+# The original CSS/JS file source directory
+mediaRootDir: media
+# The directory into which the compressed files will be placed
+# relative to mediaRootDir
+outputDir: build
+# The temporary directory where pre-compressed files are stored
+tempDir: .compressed
+# Optional property. Defaults to 10000 (10 seconds)
+# checkIntervalMs: 10000
+groups:
+    - groupName: core_js
+      mediaType: js
+      outputFileName: core.js
+      outputFileNameMinified: core.min.js
+      jslint: off
+      sourceFileNames:
+        - js/jquery-1.4.2.js
+        - js/jquery-ui-1.8.js
+        - js/widgets.js
+    - groupName: core_css
+      mediaType: css
+      outputFileName: core.css
+      outputFileNameMinified: core.min.css
+      jslint: off
+      sourceFileNames:
+        - yui/2.7.0/build/reset/reset.css
+        - yui/2.7.0/build/base/base.css
+        - yui/2.7.0/build/fonts/fonts.css
+        - yui/2.7.0/build/grids/grids.css
+        - css/jquery-ui-1.8.css
+        - css/widgets.css
+        - css/widgets-theme-advanced.css
+
+
+jslintOptions:
+    #- adsafe
+    - bitwise
+    #- browser
+    #- cap
+    #- css
+    #- debug
+    - eqeqeq
+    #- evil
+    - forin
+    #- fragment'
+    - immed
+    - indent=4
+    #- laxbreak
+    - newcap
+    - nomen
+    #- on
+    #- onevar
+    - passfail
+    #- plusplus
+    - regexp
+    #- safe
+    #- sidebar
+    #- strict
+    #- sub
+    #- undef
+    - white
+    #- widget
+

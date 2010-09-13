@@ -1,0 +1,16 @@
+{% load humanize %}
+<li class="search-results t11e-widget ui-widget-content">
+    <div class="t11e-hd">
+        <div style="float: right" class="sale_price"><strong>${{ home.sale_price|intcomma }}</strong></div>
+        <h4 class="neighborhood">{{ home.neighborhood|title }}</h4>
+    </div>
+    <div class="t11e-bd">
+        <div>{{ home.address|title }}, block {{ home.block }}, lot {{ home.lot }}</div>
+        <div>{{ home.city }}, {{ home.state }} {{ home.zip_code }}</div>
+        <div>{{ home.residential_units }} total residential units out of {{ home.total_units }}.</div>
+        <div>{{ home.commercial_units }} commercial units.</div>
+        <div>Built: {{ home.year_built}}</div>
+        <div>Sold: {{ home.sale_date}}</div>
+    </div>
+    <div class="t11e-ft"></div>
+</li>

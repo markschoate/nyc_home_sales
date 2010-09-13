@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block search_widgets %}
+<div id="widget-sale-price" class="t11e-widget t11e-widget-jquery-faceted-dual-slider">
+    <div class="t11e-hd t11e-widget-jquery-faceted-dual-slider-hd"><h1>sale price</h1></div>
+    <div class="t11e-bd t11e-widget-jquery-faceted-dual-slider-bd">
+        <div class="t11e-slider-control"> </div>
+        <div class="t11e-amount"> </div>
+    </div>
+</div>
+
+<div id="widget-year-built" class="t11e-widget t11e-widget-jquery-faceted-dual-slider">
+    <div class="t11e-hd t11e-widget-jquery-faceted-dual-slider-hd"><h1>year built</h1></div>
+    <div class="t11e-bd t11e-widget-jquery-faceted-dual-slider-bd">
+        <div class="t11e-slider-control"> </div>
+        <div class="t11e-amount"> </div>
+    </div>
+</div>
+
+<div id="widget-neighborhood" class="t11e-widget t11e-widget-jquery-textbox t11e-widget-id-neighborhood">
+    <div class="t11e-hd t11e-widget-jquery-textbox-hd"><h1>neighborhood</h1></div>
+    <div class="t11e-bd t11e-widget-jquery-textbox-bd">
+        <form action="" onsubmit="return false;">
+            <input name="neighborhood">
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+ //<!--
+     t11e.widget_options['neighborhood'] = {
+"search_group": "default",
+"value_param": "neighborhood"
+     };
+ //-->
+</script>
+<div id="widget-zip-code" class="t11e-widget t11e-widget-jquery-textbox">
+    <div class="t11e-hd t11e-widget-jquery-textbox-hd"><h1>zip code</h1></div>
+    <div class="t11e-bd t11e-widget-jquery-textbox-bd">
+        <form action="" onsubmit="return false;">
+            <input name="zip_code">
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block response_widgets %}
+<div id="widget-pagination1" class="t11e-widget t11e-widget-jquery-pagination">
+    <div class="t11e-hd t11e-widget-jquery-pagination-hd"></div>
+    <div class="t11e-bd t11e-widget-jquery-pagination-bd">
+        <div class="pagination">
+            <a href="#" class="prev">Prev</a><a href="#">1</a><a href="#" class="next">Next</a>
+        </div>
+    </div>
+</div>
+
+<div id="widget-results" class="t11e-widget t11e-widget-jquery-results">
+    <div class="t11e-hd t11e-widget-jquery-results-hd"></div>
+    <div class="t11e-bd t11e-widget-jquery-results-bd">
+        <div class="t11e-results"></div>
+        <div class="t11e-widget-jquery-results-loading">
+            Searching...
+        </div>
+    </div>
+</div>
+
+<div id="widget-pagination2" class="t11e-widget t11e-widget-jquery-pagination">
+    <div class="t11e-hd t11e-widget-jquery-pagination-hd"></div>
+    <div class="t11e-bd t11e-widget-jquery-pagination-bd">
+        <div class="pagination">
+            <a href="#" class="prev">Prev</a><a href="#">1</a><a href="#" class="next">Next</a>
+        </div>
+    </div>
+</div>
+
+<div id="widget-response" class="t11e-widget t11e-widget-jquery-response">
+    <div class="t11e-hd t11e-widget-jquery-response-hd">JSON Response</div>
+    <div class="t11e-bd t11e-widget-jquery-response-bd">
+        <div class="response"></div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block related_widgets %}
+<div id="widget-map" class="t11e-widget t11e-widget-jquery-google-map">
+    <div class="t11e-hd t11e-widget-jquery-google-map-hd"></div>
+    <div class="t11e-bd t11e-widget-jquery-google-map-bd">
+        <div class="google-map"></div>
+    </div>
+</div>
+
+{% endblock %}

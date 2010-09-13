@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dimensions>
+<dimension id="numFloors" key="data/numFloors" type="integer" min="1" max="5"/>
+<dimension id="parking" key="data/parking" type="tree">
+<element id="Attached Garage"/>
+<element id="Carport"/>
+<element id="Detached Garage"/>
+<element id="Driveway"/>
+<element id="Street"/>
+</dimension>
+<dimension id="exterior" key="data/exterior" type="tree">
+<element id="Brick"/>
+<element id="Concrete"/>
+<element id="Composition"/>
+<element id="Metal"/>
+<element id="Shingle"/>
+<element id="Stone"/>
+<element id="Stucco"/>
+<element id="Vinyl"/>
+<element id="Wood"/>
+<element id="Steel Framed Glass"/>
+</dimension>
+<dimension id="unitFloor" key="data/unitFloor" type="integer" min="1" max="50"/>
+<dimension id="heatingCooling" key="data/heatingCooling" type="tree">
+<element id="Central"/>
+<element id="Steam Radiant"/>
+<element id="Evaporative"/>
+<element id="Wall Unit"/>
+<element id="Forced Air"/>
+<element id="Window Unit"/>
+<element id="Geothermal"/>
+<element id="Heat Pump"/>
+<element id="Hydronic"/>
+<element id="Radiant Heat"/>
+<element id="Solar"/>
+</dimension>
+<dimension id="lotSizeUnits" key="data/lotSizeUnits" type="tree">
+<element id="acres"/>
+</dimension>
+<dimension id="architecture" key="data/architecture" type="tree">
+<element id="Bungalow"/>
+<element id="Cape Cod"/>
+<element id="Colonial"/>
+<element id="Modern"/>
+<element id="Craftsman"/>
+<element id="French"/>
+<element id="Georgian"/>
+<element id="Loft"/>
+<element id="Queen Anne / Victorian"/>
+<element id="Ranch"/>
+<element id="Santa Fe"/>
+<element id="Spanish"/>
+<element id="Split-level"/>
+<element id="Tudor"/>
+<element id="Pre-war"/>
+</dimension>
+<dimension id="type" key="data/type" type="tree">
+<element id="Single-family"/>
+<element id="Condo"/>
+<element id="Townhome"/>
+<element id="Co-op"/>
+<element id="Apartment"/>
+<element id="Loft"/>
+<element id="Mobile / Manufactured"/>
+<element id="Farm / Ranch"/>
+<element id="Lot / Land"/>
+<element id="Multi-family"/>
+<element id="Houseboat"/>
+</dimension>
+<dimension id="heatedSquareFeet" key="data/heatedSquareFeet" type="integer" min="100" max="10000"/>
+<dimension id="exteriorFeatures" key="data/exteriorFeatures" type="tree">
+<element id="Deck"/>
+<element id="Lawn"/>
+<element id="Dock"/>
+<element id="Sprinkler System"/>
+<element id="Barbecue Area"/>
+<element id="Patio"/>
+<element id="Fenced Yard"/>
+<element id="Pond"/>
+<element id="Garden"/>
+<element id="Pool"/>
+<element id="Greenhouse"/>
+<element id="Porch"/>
+<element id="Wet Bar"/>
+<element id="Roof Garden"/>
+<element id="Roof Access"/>
+<element id="Terrace"/>
+</dimension>
+<dimension id="fullBaths" key="data/fullBaths" type="integer" min="0" max="5"/>
+<dimension id="halfBaths" key="data/halfBaths" type="integer" min="0" max="4"/>
+<dimension id="status" key="data/status" type="tree">
+<element id="ForSale"/>
+<element id="MakeOffer"/>
+<element id="InContract"/>
+</dimension>
+<dimension id="basement" key="data/basement" type="tree">
+<element id="Finished"/>
+<element id="Unfinished"/>
+<element id="Partially Finished"/>
+</dimension>
+<dimension id="bedrooms" key="data/bedrooms" type="integer" min="0" max="6"/>
+<dimension id="available" key="data/available" type="time" format="yyyy-MM-dd"/>
+<dimension id="kitchen" key="data/kitchen" type="tree">
+<element id="L-Shaped"/>
+<element id="U-Shaped"/>
+<element id="Galley"/>
+<element id="Two-way Galley"/>
+</dimension>
+<dimension id="lotSize" key="data/lotSize" type="tree">
+<element id="0.25"/>
+<element id="0.5"/>
+<element id="1"/>
+<element id="1.5"/>
+<element id="2"/>
+<element id="2.5"/>
+<element id="3"/>
+<element id="4"/>
+<element id="5"/>
+</dimension>
+<dimension id="additionalRooms" key="data/additionalRooms" type="tree">
+<element id="Atrium"/>
+<element id="Attic"/>
+<element id="Breakfast Nook"/>
+<element id="Dining Room"/>
+<element id="Family Room"/>
+<element id="Laundry Room"/>
+<element id="Library"/>
+<element id="Living Room"/>
+<element id="Mud Room"/>
+<element id="Office"/>
+<element id="Pantry"/>
+<element id="Recreation Room"/>
+<element id="Sauna"/>
+<element id="Solarium"/>
+<element id="Workshop"/>
+</dimension>
+<dimension id="price" key="data/price" type="long" min="50000" max="1500000"/>
+<dimension id="appliances" key="data/appliances" type="tree">
+<element id="Dishwasher"/>
+<element id="Trash Compactor"/>
+<element id="Dryer Washer"/>
+<element id="Freezer"/>
+<element id="Garbage Disposal"/>
+<element id="Microwave"/>
+<element id="Range &amp; Oven"/>
+<element id="Refrigerator"/>
+</dimension>
+<dimension id="address" key="data/address" type="text"/>
+<dimension id="parkingCapacity" key="data/parkingCapacity" type="integer" min="0" max="6"/>
+<dimension id="views" key="data/views" type="tree">
+<element id="Beach"/>
+<element id="City"/>
+<element id="Mountain"/>
+<element id="Park"/>
+<element id="Water"/>
+</dimension>
+<dimension id="heatingSource" key="data/heatingSource" type="tree">
+<element id="Coal"/>
+<element id="Electric"/>
+<element id="Oil"/>
+<element id="Gas"/>
+<element id="Solar"/>
+<element id="Wood / Pellet"/>
+</dimension>
+<dimension id="deliveredVacant" key="data/deliveredVacant" type="tree">
+<element id="no" value="0"/>
+<element id="yes" value="1"/>
+</dimension>
+<dimension id="flooring" key="data/flooring" type="tree">
+<element id="Carpet"/>
+<element id="Concrete"/>
+<element id="Hardwood"/>
+<element id="Laminate"/>
+<element id="Linoleum / Vinyl"/>
+<element id="Slate"/>
+<element id="Softwood"/>
+<element id="Tile"/>
+</dimension>
+</dimensions>

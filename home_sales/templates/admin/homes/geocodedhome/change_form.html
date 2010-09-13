@@ -1,0 +1,11 @@
+{% extends 'admin/change_form.html' %}
+
+{% block after_field_sets %}
+
+<img border="0" src="http://maps.google.com/maps/api/staticmap?center={{original.latitude}},{{original.longitude}}&zoom=13&size=400x300&markers=color:blue|label:H|{{original.latitude}},{{original.longitude}}&sensor=false" alt=" " />
+
+<iframe width="400" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+src="http://maps.google.com/maps/sv?cbp=1,479.7175735027764,,0,-3.50219513621329&amp;cbll={{original.latitude}},{{original.longitude}}&amp;v=1&amp;panoid=dmZf3jLw1OS-1bR58b03FA&amp;gl=&amp;hl=en">
+</iframe>
+
+{% endblock %}

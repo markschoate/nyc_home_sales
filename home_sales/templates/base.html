@@ -1,0 +1,148 @@
+{% load compress_media %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+    <head>
+        <title>
+            {{ title }}
+        </title>
+
+        {% compress_media core_css %}
+
+        <style>
+            .search-results {margin: .5em 0 .5em 0; padding: .5em;}
+            .t11e-widget-jquery-results .t11e-results { padding: .5em;}
+            .t11e-hd h4 {margin-left: .5em;}
+        </style>
+    </head>
+    <body onunload="GUnload()">
+    <script type="text/javascript">
+    //<!--
+        if ('undefined' === typeof t11e) { t11e = {}; }
+        if ('undefined' === typeof t11e.widget_options) { t11e.widget_options = {}; }
+    //-->
+    </script>
+    <div id="doc3" class="yui-t2">
+        <div id="hd" role="banner">
+          <h1>{{ title }}</h1>
+        </div>
+        <div id="bd" role="main">
+            <div id="yui-main">
+                <div class="yui-b">
+                    <div class="yui-g">
+                        <div class="yui-u first">
+{% block response_widgets %}
+{% endblock %}
+                        </div>
+                        <div class="yui-u">
+                            {% block related_widgets %}
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="yui-b">
+                {% block search_widgets %}
+                {% endblock %}
+            </div>
+        </div>
+
+        <div id="ft" role="contentinfo">
+        </div>
+    </div>
+    {% compress_media core_js %}
+
+    <script type="text/javascript">//<![CDATA[
+    (function ($) {
+        $('#widget-sale-price').t11e_faceted_dual_slider({
+            "search_group": "default",
+            "page_param": "page",
+            "min_param": "sale_price_min",
+            "max_param": "sale_price_max",
+            "min_value": 100000,
+            "max_value": 10000000,
+            "min_is_any": true,
+            "max_is_any": true,
+            "step": 50000,
+            "format": function ($, amount, min_value, max_value) {
+                if ('' === min_value && '' === max_value) {
+                    amount.text('any');
+                } else  {
+                    var min_value_text = '' === min_value ? 'any' : '$' + (min_value/1000 > 1000 ? min_value/1000000.0 + 'M' : min_value/1000 + 'K');
+                    var max_value_text = '' === max_value ? 'any' : '$' + (max_value/1000 > 1000 ? max_value/1000000.0 + 'M' : max_value/1000 + 'K');
+                    amount.text(min_value_text + ' - ' + max_value_text);
+                }
+            }
+        });
+        $('#widget-year-built').t11e_faceted_dual_slider({
+            "search_group": "default",
+            "dimension": "year_built",
+            "page_param": "page",
+            "min_param": "year_built_min",
+            "max_param": "year_built_max",
+            "min_is_any": true,
+            "max_is_any": true,
+            "min_value": 1900,
+            "max_value": 2011,
+            "step": 1,
+            "format": function ($, amount, min_value, max_value) {
+                if ('' === min_value && '' === max_value) {
+                    amount.text('any');
+                } else  {
+                    var min_value_text = '' === min_value ? 'any' : min_value;
+                    var max_value_text = '' === max_value ? 'any' : max_value;
+                    amount.text(min_value_text + ' - ' + max_value_text);
+                }
+            }
+        });
+        $('#widget-neighborhood').t11e_textbox({
+            "search_group": "default",
+            "value_param": "neighborhood"
+        });
+        $('#widget-zip-code').t11e_textbox({
+            "search_group": "default",
+            "value_param": "zip_code"
+        });
+        $('#widget-pagination1').t11e_pagination({
+            "search_group": "default",
+            "page_param": "page"
+        });
+        $('#widget-pagination2').t11e_pagination({
+            "search_group": "default",
+            "page_param": "page"
+        });
+        $('#widget-results').t11e_results({
+            "search_group": "default",
+            "base_url": "results"
+        });
+        $('#widget-response').t11e_response({
+            "search_group": "default"
+        });
+        $('#widget-map').t11e_google_map({
+            "search_group": "default",
+            "dimension": "latlon",
+            "map_height": 450,
+            "center_latitude": 40.777900699999996,
+            "center_longitude": -73.9634018,
+            "zoom_level": 13,
+            "close_match_icon": "/media/images/google_map_markers/largeTDYellowIcons/marker${index1}.png",
+            "exact_match_icon": "/media/images/google_map_markers/largeTDRedIcons/marker${index1}.png",
+            "icon_shadow": "/media/images/google_map_markers/shadow50.png",
+            "item_info_url": "/info_window/${id}/",
+            "icon_width": 34,
+            "icon_height": 20,
+            "icon_shadow_width": 27,
+            "icon_shadow_height": 34,
+            "icon_anchor_x": 9,
+            "icon_anchor_y": 34
+        });
+        t11e.widget.jquery.activate_widgets($);
+        var options = {"search_groups": {"default": {"url": "search"}}};
+        options.history_plugin = t11e.widget.jquery.history_plugin($);
+        options.search_plugin = t11e.widget.jquery.search_plugin($);
+        t11e.widget.activate_search_page(options);
+    }(jQuery));
+    //]]></script>
+    <script src="http://maps.google.com/maps?file=api&amp;v=2.x&amp;key=" type="text/javascript"></script>
+    </body>
+</html>
