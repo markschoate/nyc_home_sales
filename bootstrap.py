@@ -1127,7 +1127,6 @@ import os, subprocess
 install = '''Django==1.2.2
 Fabric==0.9.2
 PyYAML==3.09
-distribute==0.6.10
 django-extensions==0.5
 jsonlib==1.6.1
 paramiko==1.7.6
