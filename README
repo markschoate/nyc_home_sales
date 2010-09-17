@@ -1,7 +1,7 @@
 This is a sample Django application that provides a simple search for
- public record home sales data from Manhattan. The search interface makes use
- of the discovery_widgets project, an open source collection of jQuery widgets
- that use a pub/sub mechanism to manage search state (http://github.com/markschoate/discovery_widgets)
+public record home sales data from Manhattan. The search interface makes use
+of the discovery_widgets project, an open source collection of jQuery widgets
+that use a pub/sub mechanism to manage search state (http://github.com/markschoate/discovery_widgets)
 
 The project uses virtualenv, so once the project has been cloned, change into the project
 directory and execute the bootstrap.py script in order to install the dependencies:
