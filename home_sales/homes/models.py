@@ -1,8 +1,12 @@
 from django.db import models
 
-# Create your models here.
+BOROUGHS = (
+    (1, 'Manhattan')
+)
+
 class Home(models.Model):
-    borough = models.SmallIntegerField(blank=True, null=True)
+    """Public record home sales data for New York."""
+    borough = models.SmallIntegerField(choices=BOROUGHS, blank=True, null=True)
     neighborhood = models.CharField(max_length=128)
     building_class_category = models.CharField(max_length=128)
     tax_class_at_present = models.CharField(max_length=2)
@@ -29,6 +33,7 @@ class Home(models.Model):
         return self.address;
 
 class GeocodedHome(models.Model):
+    """Geocoding data from Google."""
     home = models.OneToOneField(Home)
     latitude = models.CharField(max_length=20)
     longitude = models.CharField(max_length=20)
@@ -37,4 +42,4 @@ class GeocodedHome(models.Model):
     flagged = models.BooleanField(default=False)
 
     def __unicode__(self):
-        return self.home.address;
+        return u'%s %s:%s' % (self.formatted_address, self.latitude, self.longitude);
