@@ -8,7 +8,8 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.template.loader import render_to_string
 
-from home_sales.homes.models import Home, GeocodedHome
+from homes.models import Home, GeocodedHome
+from homes.ajax_utils import ajax_request
 
 PAGE_SIZE = 10;
 
@@ -58,6 +59,7 @@ def search(request):
         item_ids = [str(i.id) for i in discovery_response if i]
         latlon_values = [(i.geocodedhome.latitude + ',' + i.geocodedhome.longitude) for i in discovery_response if i]
 
+        # Format response for discovery widgets.
         response = {
             '_discovery': {
                 'response': {
@@ -78,6 +80,7 @@ def search(request):
         stacktrace = traceback.format_exc()
         return HttpResponse(content=stacktrace, content_type='text/plain', status=500)
 
+@ajax_required
 def results(request):
     item_list = request.GET.get('itemIds')
     page = int(request.GET.get('page', 1))
@@ -111,7 +114,11 @@ def results(request):
 
     return HttpResponse('No results were found')
 
+@ajax_required
 def info_window(request, id):
+    """
+    Displays info window for Google Maps.
+    """
     home = get_object_or_404(Home, pk=id)
     latitude = home.geocodedhome.latitude
     longitude = home.geocodedhome.longitude
@@ -124,6 +131,9 @@ def info_window(request, id):
     )
 
 def _get_query_params(target, discovery_response, page, page_size, start_index, total_size):
+    """
+    Returns query string to be used by the results Javascript widget to render the results.
+    """
     query_params = 'itemIds=%s' % ','.join([str(i.id) for i in discovery_response if i])
     query_params += '&page=%s' % page
     query_params += '&startIndex=%s' % start_index
